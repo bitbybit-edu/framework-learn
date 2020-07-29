@@ -12,6 +12,7 @@ public class AutoService {
     DMZService dmzService;
 
     public void setDmzService(DMZService dmzService) {
+        logger.info("注入了dmzService = {}", dmzService);
         this.dmzService = dmzService;
     }
 
