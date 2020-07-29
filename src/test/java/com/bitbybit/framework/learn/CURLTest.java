@@ -4,12 +4,10 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.LineNumberReader;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.URL;
 
 
 public class CURLTest {
@@ -18,9 +16,18 @@ public class CURLTest {
     @Test
     void curl() {
         try {
-            Process exec = Runtime.getRuntime().exec("curl -F media=@/home/liulin/Desktop/1.jpg \"https://api.weixin.qq.com/cgi-bin/media/upload?access_token=35_OCDoPtp6uf9P2FfLIlc5OjP9OSn8HMK7Tvs6a_2dLuItzyH3Gl2vAvks_KivVTFhtarIXPgWMrfJSozg9UTkwoo90CZ9mBJAglpzb1sqg1kv9J3w12bswoGEGdwwD-ITpfxetPPlzLEQz9a3XTGhADAEAN&type=image\"");
-            List<String> processList = new ArrayList<String>();
-
+            ProcessBuilder processBuilder = new ProcessBuilder();
+            // 直接调用curl 掉不通
+//            processBuilder.command("curl -F media=@/home/liulin/Desktop/1.jpg \"https://api.weixin.qq.com/cgi-bin/media/upload?access_token=35_Oi7STsgWWarrzncL100nl5fOZHp1csUPD_V79SO0rGqv0OqL9AZdmpk9c3-Hw7k3zqD75n20a8VgSsXUtQQMfgqfYtsIDfoRWrUtf38tyxfDcxqAEiKt8v3okpCm7Alo6tS81AwQyIYjJbYiNAHcAEAANU&type=image\"");
+            processBuilder.command("pwd");
+            Process start = processBuilder.start();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(start.getInputStream()));
+            StringBuilder builder = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                builder.append(line);
+            }
+            logger.info("result = {}", builder.toString());
         } catch (Exception e) {
             logger.error("", e);
         }
