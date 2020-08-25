@@ -1,5 +1,6 @@
 package com.bitbybit.framework.learn;
 
+import com.bitbybit.framework.learn.bean.post.processor.ConfigBeanPostProcessor;
 import com.bitbybit.framework.learn.config.Config;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -12,7 +13,8 @@ public class BeanPostProcessorTest {
 
     @Test
     void beaPostProcessorTest() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(Config.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ConfigBeanPostProcessor.class);
+
 
     }
 }

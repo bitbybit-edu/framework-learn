@@ -1,5 +1,6 @@
 package com.bitbybit.framework.learn.bean.post.processor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class IndexService {
 
-    private LuBanService luBanService;
+    @Autowired
+    LuBanService luBanService;
 
     @Override
     public String toString() {
