@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AutoInjectTest {
+
     private static final Logger logger = LoggerFactory.getLogger(XmlBeanTest.class);
 
     @Test
