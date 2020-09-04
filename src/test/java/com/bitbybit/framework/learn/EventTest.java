@@ -1,5 +1,7 @@
 package com.bitbybit.framework.learn;
 
+import com.bitbybit.framework.learn.event.Main02;
+import com.bitbybit.framework.learn.event.Main02Async;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +24,32 @@ public class EventTest {
         // 程序会打印如下：
         // 接收到事件：hello event
         // 处理事件....
+    }
+
+    @Test
+    void eventAnnotationTest() {
+        ApplicationEventPublisher publisher = new AnnotationConfigApplicationContext(Main02.class);
+        publisher.publishEvent(new Main02.Event("注解事件"));
+        publisher.publishEvent(new Main02.Event2("注解事件2"));
+        // 程序打印：
+        // 接收到事件:注解事件
+        // 处理事件
+    }
+
+    @Test
+    void eventAnnotationAsyncTest() {
+        ApplicationEventPublisher publisher = new AnnotationConfigApplicationContext(Main02Async.class);
+        publisher.publishEvent(new Main02Async.Event("注解事件"));
+        publisher.publishEvent(new Main02Async.Event2("注解事件2"));
+
+        try {
+            Thread.sleep(20 * 1000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // 程序打印：
+        // 接收到事件:注解事件
+        // 处理事件
     }
 
     static class MyEvent extends ApplicationEvent {
