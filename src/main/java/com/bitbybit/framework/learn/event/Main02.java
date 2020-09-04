@@ -37,6 +37,11 @@ public class Main02 {
     static class Listener {
         @EventListener
         public void listen(Event event) {
+            try {
+                Thread.sleep(10 * 1000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("接收到事件:" + event);
             System.out.println("处理事件");
         }
@@ -46,6 +51,12 @@ public class Main02 {
     static class Listener2 {
         @EventListener
         public void listen(Event2 event) {
+            try {
+                Thread.sleep(10 * 1000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             System.out.println("接收到事件:" + event);
             System.out.println("处理事件");
         }
