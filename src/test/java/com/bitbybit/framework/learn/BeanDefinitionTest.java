@@ -13,7 +13,7 @@ public class BeanDefinitionTest {
 
     @Test
     void beanDefinitionTest() {
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("beanDefinition.xml");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:beanDefinition.xml");
 //        ParentBean parent = applicationContext.getBean("parent", ParentBean.class);
         ChildBean child = applicationContext.getBean("child", ChildBean.class);
 
