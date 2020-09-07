@@ -1,5 +1,6 @@
 package com.bitbybit.framework.learn;
 
+import com.bitbybit.framework.learn.event.EventOrderMainClass;
 import com.bitbybit.framework.learn.event.Main02;
 import com.bitbybit.framework.learn.event.Main02Async;
 import org.junit.jupiter.api.Test;
@@ -47,6 +48,17 @@ public class EventTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        // 程序打印：
+        // 接收到事件:注解事件
+        // 处理事件
+    }
+
+    @Test
+    void eventAnnotationOrderTest() {
+        ApplicationEventPublisher publisher = new AnnotationConfigApplicationContext(EventOrderMainClass.class);
+        publisher.publishEvent(new EventOrderMainClass.Event("注解事件"));
+        publisher.publishEvent(new EventOrderMainClass.Event("注解事件2"));
+
         // 程序打印：
         // 接收到事件:注解事件
         // 处理事件
