@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
-//@EnableAsync
+@EnableAsync
 @Configuration
 @ComponentScan("com.bitbybit.framework.learn.event")
 public class Main02Async {
