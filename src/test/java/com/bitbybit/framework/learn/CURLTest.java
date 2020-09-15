@@ -28,8 +28,9 @@ public class CURLTest {
                 builder.append(line);
             }
             logger.info("result = {}", builder.toString());
-        } catch (Exception e) {
+        } catch (Exception e) {sssds
             logger.error("", e);
         }
     }
 }
+sddd

@@ -17,6 +17,11 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	// https://mvnrepository.com/artifact/org.aspectj/aspectjrt
+	compile group: 'org.aspectj', name: 'aspectjrt', version: '18.1'
+	// https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+	runtime group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.6'
+
 }
 
 test {
