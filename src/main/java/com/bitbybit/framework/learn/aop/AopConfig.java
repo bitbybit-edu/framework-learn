@@ -8,7 +8,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @author liulin
  */
 @Configuration
-@ComponentScan("com.bitbybit.framework.learn.app")
 @EnableAspectJAutoProxy
+@ComponentScan("com.bitbybit.framework.learn.aop")
 public class AopConfig {
 }
+
