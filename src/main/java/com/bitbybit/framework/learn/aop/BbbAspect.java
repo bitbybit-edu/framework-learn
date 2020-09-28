@@ -96,8 +96,7 @@ public class BbbAspect {
     @Around("executionPointcut()")
     public void executionAround(ProceedingJoinPoint pjp) throws Throwable {
         System.out.println("execution aspect Around(before) invoke!");
-        pjp.getArgs();
-
+        Object[] args = pjp.getArgs();
         System.out.println(pjp.proceed());
         System.out.println("execution aspect Around(after) invoke!");
     }

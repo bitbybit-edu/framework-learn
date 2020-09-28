@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="xmlBean" class="com.bitbybit.framework.learn.xmlBean.XmlBean"/>
+    <bean id="xmlBean" class="com.bitbybit.framework.learn.ioc.xml.bean.XmlBean"/>
 
 
 </beans>
