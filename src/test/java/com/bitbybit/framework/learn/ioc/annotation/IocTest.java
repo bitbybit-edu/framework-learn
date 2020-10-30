@@ -8,6 +8,8 @@ public class IocTest {
     @Test
     public void iocAnnotationTest() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(Config.class);
+        Service getService = applicationContext.getBean("getService", Service.class);
+        getService.sayHello();
         Service bean = applicationContext.getBean(Service.class);
         bean.sayHello();
     }
